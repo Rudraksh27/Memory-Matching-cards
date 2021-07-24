@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #151b29;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  line-height: 1;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.moves {
+  
+  text-align: right;
+  font-size: 40px;
+  color: red;
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.match {
+  
+  text-align: right;
+  font-size: 40px;
+  color: green;
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.title{
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+p strong {
+  font-size: 14px;
+  color: #777;
+}
+
+.cards {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+  gap: 10px;
+}
+
+.pokemon-card {
+  height: 150px;
+  width: 150px;
+  border-radius: 2px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.pokemon-card.flipped .inner {
+  transform: rotateY(180deg);
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: 0.6s cubic-bezier(0.38, 0.02, 0.09, 1.66) all;
+}
+
+.pokemon-card .front,
+.pokemon-card .back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.pokemon-card .front {
+  background: #fff;
+  transform: rotateY(180deg);
+}
+
+.pokemon-card .back {
+  background: #FF6700;
+  color: black;
+  font-size: 100px;
+  transition: 0.3s ease all;
+}
+
+/* .pokemon-card .back:hover {
+  background: #ffa260;
+  color: #fff;
+  transform: scale(1.02);
+} */
+
+.pokemon-card .back:hover {
+  background: #ffa260;
+  color: #fff;
+  box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
+  transform: translateY(-0.05em);
+  cursor: pointer;
+}
